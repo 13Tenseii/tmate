@@ -1,2 +1,14 @@
 # Project exclude paths
+/.idea
+
 /ui/node_modules/
+/ui/etc/
+/ui/node/
+/ui/package-lock.json
+/ui/twoar.ui.iml
+/ui/target
+
+/core/target
+/core/twoar.core.iml
+/core/src/main/resources/static
+/core/src/main/resources/templates

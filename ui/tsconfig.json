@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "target": "es6",
+    "removeComments": true,
+    "noEmitHelpers": true,
+    "jsx": "react-native",
+    "rootDir": "js",
+    "outDir": "target"
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "target"
+  ]
+}

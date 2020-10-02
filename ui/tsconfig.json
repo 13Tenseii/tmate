@@ -5,8 +5,8 @@
     "removeComments": true,
     "noEmitHelpers": true,
     "jsx": "react-native",
-    "rootDir": "js",
-    "outDir": "target"
+    "outDir": "target",
+    "allowSyntheticDefaultImports": true
   },
   "include": [
     "src/**/*.ts",

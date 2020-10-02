@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.tenseii</groupId>
-    <artifactId>twoar</artifactId>
+    <artifactId>tmate</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>twoar</name>
     <packaging>pom</packaging>
@@ -14,7 +14,6 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.3.4.RELEASE</version>
-        <relativePath/>
     </parent>
 
     <modules>

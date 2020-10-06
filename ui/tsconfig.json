@@ -4,7 +4,7 @@
     "target": "es6",
     "removeComments": true,
     "noEmitHelpers": true,
-    "jsx": "react-native",
+    "jsx": "react",
     "outDir": "target",
     "allowSyntheticDefaultImports": true
   },

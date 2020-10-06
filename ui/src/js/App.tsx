@@ -1,9 +1,9 @@
 import React from "react";
 import Template from "./util/ReactUtil";
 
-@Template(function (this: App) {return (
+@Template(function (_this: App) {return (
     <div id="app">
-        {this.test}
+        {_this.test}
     </div>
 )})
 class App extends React.Component {

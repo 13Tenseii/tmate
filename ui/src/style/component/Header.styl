@@ -1,0 +1,35 @@
+.Header {
+  display flex;
+  justify-content center;
+  position fixed;
+  z-index 10;
+  width 100%;
+  height $headerHeight;
+  color white;
+  background-color #292841;
+  box-shadow: 0 0 10px rgba(0,0,0,1);
+
+  &__logo {
+    content url("../assets/gradient-logo.png");
+    height 4rem;
+    align-self center;
+    cursor: pointer;
+  }
+
+  &__btn {
+    font-size 1.25rem;
+    font-weight bold;
+    align-self center;
+    cursor: pointer;
+  }
+
+  &__login {
+    @extend .Header__btn;
+    margin-right 2rem;
+  }
+
+  &__register {
+    @extend .Header__btn;
+    margin-left 2rem;
+  }
+}

@@ -54,7 +54,7 @@
                         <configuration>
                             <executable>stylus</executable>
                             <commandlineArgs>. --out ${project.build.directory}/dist/static/css/style.min.css</commandlineArgs>
-                            <workingDirectory>${basedir}/src/styles</workingDirectory>
+                            <workingDirectory>src/style</workingDirectory>
                         </configuration>
                     </execution>
                 </executions>

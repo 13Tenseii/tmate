@@ -1,35 +1,20 @@
 import {render} from "react-dom";
 import React from "react";
 
-export default function Template(template) {
+
+// no render function inside class needed, pass html template through function
+export default function Template(template: Function) {
     return function<T extends { new (...args: any[]): {} }>(
         constructor: T
     ) {
         return class extends constructor {
-            render = () => {return template()}
+            constructor(...args: any[]) {
+                super(...args);
+                let templateToInstance = template.bind(this);
+                Object.defineProperty(this, 'render', {
+                    value: () => {return templateToInstance()}
+                })
+            }
         }
     }
 }
-
-// export default function Template(template) {
-//     return (target) => {
-//         target.prototype.render = () => {
-//             return template
-//         };
-//         return target;
-//     }
-// }
-
-// export default function Template(template: Function) {
-//     return (target) => {
-//         let obj = new target;
-//         obj.render = () => {return template();};
-//         return obj;
-//     }
-// }
-
-// class ReactComponent extends React.Component {
-//
-//     protected template()
-//
-// }

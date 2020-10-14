@@ -1,13 +1,15 @@
 import React from "react";
-import {useTranslation} from "react-i18next";
+import {getI18n} from "react-i18next";
+import {i18n} from "i18next";
 
 abstract class ReactComponent<P, S> extends React.Component<P, S> {
+    protected i18n: i18n;
 
     constructor(props: P) {
         super(props);
         this.state = {} as S;
+        this.i18n = getI18n();
     }
-
 
     protected abstract getClassName(): string;
 

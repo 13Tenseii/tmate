@@ -1,12 +1,13 @@
 import ReactComponent from "../../react/common/ReactComponent";
 import Template from "../../react/common/ReactUtil";
 import React from "react";
+import LangPicker from "../common/dropdown/LangPicker";
 
 
 @Template(function (this: GradientSection) {
     return (
         <div className="Gradient-section" id={this.getBlockName()}>
-
+            <LangPicker/>
         </div>
     )
 })

@@ -1,5 +1,5 @@
-import ReactComponent from "../react/common/ReactComponent";
-import Template from "../react/common/ReactUtil";
+import ReactComponent from "../../react/common/ReactComponent";
+import Template from "../../react/common/ReactUtil";
 import React from "react";
 
 

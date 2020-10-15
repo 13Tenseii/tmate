@@ -2,6 +2,8 @@ import ReactComponent from "../../../react/common/ReactComponent";
 import Template from "../../../react/common/ReactUtil";
 import React from "react";
 import DropdownOption from "./DropdownOption";
+import {i18n} from "i18next";
+import {getI18n} from "react-i18next";
 
 
 @Template(function (this: Dropdown) {
@@ -29,9 +31,11 @@ import DropdownOption from "./DropdownOption";
     )
 })
 class Dropdown extends ReactComponent<Props, State> {
+    private i18n: i18n;
 
     constructor(props: Props) {
         super(props);
+        this.i18n = getI18n();
         this.state = {
             isDropped: false,
             filteredOptions: this.props.options,

@@ -17,19 +17,11 @@ import Footer from "../component/common/Footer";
         </div>
     )
 })
-class MainView extends ReactComponent<Props, State> {
-    constructor(props: Props) {
-        super(props);
-    }
-
+class MainView extends ReactComponent<any, any> {
 
     protected getClassName(): string {
         return MainView.name;
     }
 }
-
-interface Props {}
-
-interface State {}
 
 export default MainView;

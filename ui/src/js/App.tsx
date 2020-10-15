@@ -3,6 +3,7 @@ import Template from "./react/common/ReactUtil";
 import RestApi from "./api/RestApi";
 import ReactComponent from "./react/common/ReactComponent";
 import MainView from "./view/MainView";
+import {withTranslation} from "react-i18next";
 
 @Template(function (this: App) {
     return (
@@ -11,8 +12,8 @@ import MainView from "./view/MainView";
         </div>
     )
 })
-class App extends ReactComponent<Props, State> {
-    constructor(props: Props) {
+class App extends ReactComponent<any, State> {
+    constructor(props: any) {
         super(props);
     }
 
@@ -29,10 +30,8 @@ class App extends ReactComponent<Props, State> {
     }
 }
 
-interface Props {}
-
 interface State {
     test?: string
 }
 
-export default App;
+export default withTranslation()(App);

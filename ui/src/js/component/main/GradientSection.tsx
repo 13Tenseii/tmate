@@ -7,7 +7,7 @@ import LangDropdown from "../common/LangDropdown";
 @Template(function (this: GradientSection) {
     return (
         <div className="Gradient-section" id={this.getBlockName()}>
-            <LangDropdown/>
+            {/*<LangDropdown/>*/}
         </div>
     )
 })

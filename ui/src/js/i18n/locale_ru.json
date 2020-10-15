@@ -2,6 +2,8 @@
   "translations": {
     "tmate": "Tmate",
     "login": "Войти",
-    "register": "Регистрация"
+    "register": "Регистрация",
+    "lang_en": "En",
+    "lang_ru": "Ru"
   }
 }

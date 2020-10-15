@@ -10,6 +10,7 @@ i18n
             en,
             ru
         },
+        supportedLngs: ["en", "ru"],
         fallbackLng: "en",
         debug: true,
         ns: ["translations"],

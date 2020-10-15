@@ -1,7 +1,6 @@
 import ReactComponent from "../../react/common/ReactComponent";
 import Template from "../../react/common/ReactUtil";
 import React from "react";
-import LangPicker from "./dropdown/LangPicker";
 
 @Template(function (this: Header) {
     return (

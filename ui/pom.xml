@@ -10,7 +10,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>twoar.ui</artifactId>
+    <artifactId>tmate.ui</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 

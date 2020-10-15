@@ -7,7 +7,7 @@
     <groupId>com.tenseii</groupId>
     <artifactId>tmate</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>twoar</name>
+    <name>tmate</name>
     <packaging>pom</packaging>
 
     <parent>

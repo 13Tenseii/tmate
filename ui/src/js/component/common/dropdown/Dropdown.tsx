@@ -2,28 +2,29 @@ import ReactComponent from "../../../react/common/ReactComponent";
 import Template from "../../../react/common/ReactUtil";
 import React from "react";
 import DropdownOption from "./DropdownOption";
-import {i18n} from "i18next";
-import {getI18n} from "react-i18next";
+import {withTranslation} from "react-i18next";
+import AppProps from "../AppProps";
 
 
 @Template(function (this: Dropdown) {
     return (
         <div className="Dropdown" id={this.getBlockName()}>
-            <div className="Dropdown__btn" onClick={this.hideAndShow}>
+            <div className={`Dropdown__btn ${this.state.isDropped ? 'Dropdown__btn-active' : ''}`}
+                 onClick={this.hideAndShow}>
                 <span>
                     {this.state.selectedOption
-                        ? this.i18n.t(this.state.selectedOption.bundleName)
-                        : this.i18n.t('select')}
+                        ? this.props.i18n.t(this.state.selectedOption.bundleName)
+                        : this.props.i18n.t('select')}&nbsp;
                 </span>
                 <i className={`fas fa-sort-${this.state.isDropped ? 'up' : 'down'}`}/>
             </div>
-            <div className={`Dropdown__menu ${this.state.isDropped ? 'Dropdown__menu__active' : ''}`}>
+            <div className={`Dropdown__menu ${this.state.isDropped ? 'Dropdown__menu-active' : ''}`}>
                 {this.props.options
                     .map(it =>
                         <span className="Dropdown__menu__item"
                               key={it.value}
                               onClick={() => this.onItemSelect(it)}>
-                            {this.i18n.t(it.bundleName)}
+                            {this.props.i18n.t(it.bundleName)}
                         </span>
                     )}
             </div>
@@ -31,11 +32,9 @@ import {getI18n} from "react-i18next";
     )
 })
 class Dropdown extends ReactComponent<Props, State> {
-    private i18n: i18n;
 
     constructor(props: Props) {
         super(props);
-        this.i18n = getI18n();
         this.state = {
             isDropped: false,
             filteredOptions: this.props.options,
@@ -67,7 +66,7 @@ class Dropdown extends ReactComponent<Props, State> {
     }
 }
 
-interface Props {
+interface Props extends AppProps {
     options: DropdownOption[],
     onOptionChange: (option: DropdownOption) => any,
     selectedOption?: DropdownOption,
@@ -80,4 +79,4 @@ interface State {
     selectedOption?: DropdownOption
 }
 
-export default Dropdown;
+export default withTranslation()(Dropdown);

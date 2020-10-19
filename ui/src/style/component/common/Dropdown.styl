@@ -3,30 +3,57 @@
   display: inline-block;
 
   &__btn {
-    background-color: white;
-    color black;
+    @extend .no-select;
+    background-color: inherit;
+    color: white;
+    padding: 0.3rem;
+    font-size: 16px;
+    border: 3px solid $pink;
+    cursor: pointer;
+    border-radius 0.5rem;
+
+    &:hover {
+      background-color $darkestColor;
+    }
+
+    &-active {
+      background-color $darkestColor;
+      border-bottom-left-radius 0;
+      border-bottom-right-radius 0;
+      border-bottom none;
+    }
   }
 
   &__menu {
-    background-color white;
-    color black;
+    @extend .no-select;
     display none;
+    background-color $darkNotDarkest;
+    color white;
     position absolute;
     overflow auto;
-    border 1px solid black;
     z-index 10;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    width 100%;
+    border-bottom-left-radius 0.5rem;
+    border-bottom-right-radius 0.5rem;
+    border 3px solid $pink;
+    border-top none;
 
-    &__active {
-      display block;
+    &-active {
+      display flex;
+      flex-direction column;
+      align-items center;
+      text-align center;
     }
 
     &__item {
-      color black;
+      color white;
       text-decoration none;
       display block;
+      width 100%;
 
       &:hover {
-        background-color #ddd;
+        background-color $darkestColor;
       }
     }
   }

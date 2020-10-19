@@ -1,9 +1,9 @@
 import React from "react";
 import Template from "./react/common/ReactUtil";
-import RestApi from "./api/RestApi";
 import ReactComponent from "./react/common/ReactComponent";
 import MainView from "./view/MainView";
 import {withTranslation} from "react-i18next";
+import AppProps from "./component/common/AppProps";
 
 @Template(function (this: App) {
     return (
@@ -12,26 +12,14 @@ import {withTranslation} from "react-i18next";
         </div>
     )
 })
-class App extends ReactComponent<any, State> {
-    constructor(props: any) {
+class App extends ReactComponent<AppProps, any> {
+    constructor(props: AppProps) {
         super(props);
-    }
-
-    componentDidMount() {
-        RestApi.getTest().then(resp => {
-            this.setState({
-                test: resp.data.test
-            })
-        });
     }
 
     protected getClassName(): string {
         return App.name;
     }
-}
-
-interface State {
-    test?: string
 }
 
 export default withTranslation()(App);

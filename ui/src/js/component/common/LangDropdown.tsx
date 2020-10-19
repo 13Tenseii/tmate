@@ -4,26 +4,24 @@ import React from "react";
 import DropdownOption from "./dropdown/DropdownOption";
 import Dropdown from "./dropdown/Dropdown";
 import Language from "../../i18n/Language";
-import {i18n} from "i18next";
-import {getI18n} from "react-i18next";
+import AppProps from "./AppProps";
+import {withTranslation} from "react-i18next";
 
 @Template(function (this: LangDropdown) {
     return (
-        <div className="Lang-picker">
+        <div className="Lang-dropdown">
             <Dropdown
                 options={this.options}
                 onOptionChange={this.onChange}
-                selectedOption={this.options.find(it => it.value == this.i18n.language)}/>
+                selectedOption={this.options.find(it => it.value == this.props.i18n.language)}/>
         </div>
     )
 })
-class LangDropdown extends ReactComponent<any, any> {
+class LangDropdown extends ReactComponent<Props, any> {
     private readonly options: DropdownOption[];
-    private i18n: i18n;
 
-    constructor(props: any) {
+    constructor(props: Props) {
         super(props);
-        this.i18n = getI18n();
         this.options = Language.getLangs().map(it => {
             return new DropdownOption(`lang_${it.value}`, it.value);
         });
@@ -31,13 +29,16 @@ class LangDropdown extends ReactComponent<any, any> {
     }
 
     private onChange(option: DropdownOption): void {
-        this.i18n.changeLanguage(option.value);
+        this.props.i18n.changeLanguage(option.value);
     }
-
 
     protected getClassName(): string {
         return LangDropdown.name;
     }
 }
 
-export default LangDropdown;
+interface Props extends AppProps {
+
+}
+
+export default withTranslation()(LangDropdown);

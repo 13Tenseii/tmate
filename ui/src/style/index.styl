@@ -1,10 +1,21 @@
 $headerHeight = 4.5rem;
 $darkestColor = #1c1b29;
 $darkNotDarkest = #292841;
+$pink = #b692c2;
+
+.no-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
 
 @import "view/Main-view.styl";
+@import "component/common/Join-btn.styl";
 @import "component/common/Dropdown.styl";
-@import "component/common/Lang-picker.styl";
+@import "component/common/Lang-dropdown.styl";
 @import "component/common/Header.styl";
 @import "component/common/Footer.styl"
 @import "component/main/Gradient-section.styl";

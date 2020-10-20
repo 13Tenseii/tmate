@@ -1,5 +1,5 @@
 import Axios, {AxiosRequestConfig, AxiosResponse, Method} from "../../../node_modules/axios/index";
-import HttpMethod from "./common/HttpMethod";
+import HttpMethod from "../enums/HttpMethod";
 import Request from "./common/Request";
 import GameStats from "../dto/mainview/GameStats";
 
@@ -19,16 +19,9 @@ export default class RestApi {
         return Axios.request(config);
     }
 
-    // public static getTest(): Promise<AxiosResponse<TestDto>> {
-    //     return RestApi.call(
-    //         "/test",
-    //         HttpMethod.GET,
-    //     );
-    // }
-
-    public static getInfoSectionStats(): Promise<AxiosResponse<GameStats[]>> {
+    public static getInfoGamesStats(): Promise<AxiosResponse<GameStats[]>> {
         return RestApi.call(
-            "/info-stats",
+            "/info-games-stats",
             HttpMethod.GET
         );
     }

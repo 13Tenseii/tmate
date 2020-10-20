@@ -3,7 +3,7 @@ import Template from "../../react/common/ReactUtil";
 import React from "react";
 import DropdownOption from "./dropdown/DropdownOption";
 import Dropdown from "./dropdown/Dropdown";
-import Language from "../../i18n/Language";
+import Language from "../../enums/Language";
 import AppProps from "./AppProps";
 import {withTranslation} from "react-i18next";
 

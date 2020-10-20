@@ -1,5 +1,75 @@
 .Info-section {
-  background #1c1b29;
+  background $darkestColor;
   height 40rem;
+  display flex;
+  flex-direction row;
+
+  &__column-section {
+    width 40%;
+    padding 5%;
+
+    &-left {
+      margin-right 10%;
+    }
+
+    &-right {
+      width 55%;
+      padding-left 0;
+    }
+  }
+
+  &__about {
+    display flex;
+    flex-direction column;
+    color white;
+
+    &-header {
+      font-size 1.7rem;
+    }
+
+    &__row-list {
+      margin-left 1.5rem;
+    }
+
+    &__row {
+      font-size 1.5rem;
+      margin-top 2rem;
+    }
+  }
+
+  &__games-stats {
+    display flex;
+    flex-direction row;
+
+    &__column {
+      display flex;
+      flex-direction column;
+      min-width 5rem;
+    }
+
+  }
+
+  &__game-stat {
+    display flex;
+    border 3px solid $pink;
+    border-radius: 2rem;
+    color white;
+    padding 1rem;
+    margin-bottom 2.5rem;
+
+    &__logo {
+      height 6rem;
+    }
+
+    &__info {
+      padding-left 0.5rem;
+      padding-right 0.5rem;
+    }
+
+    &__join-btn {
+      background-color white;
+      color black;
+    }
+  }
 
 }

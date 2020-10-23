@@ -7,9 +7,9 @@
     "lang_ru": "Ru",
     "join": "Join",
     "platform_target_info": "This platform was created by gamers for gamers so that you can find the right teammate without any problems",
-    "first_poss": "Possibility/advantage 1",
-    "second_poss": "Possibility/advantage 2",
-    "third_poss": "Possibility/advantage 3",
-    "curr_players_online": "Players online now"
+    "platform_target_info_description": "Platform target info description",
+    "curr_players_online": "Players online now",
+    "work_example_header": "Work example header",
+    "work_example_description": "Work example description...work example description...work example description..."
   }
 }

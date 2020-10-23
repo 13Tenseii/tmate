@@ -1,0 +1,61 @@
+.Players-online-section {
+
+  &__content {
+    padding 5rem;
+    display flex;
+    flex-direction row;
+    justify-content center;
+  }
+
+  &__carousel {
+
+    &__item {
+      content url("/assets/test-png.png");
+      width auto;
+      max-height 20rem;
+      min-height 5rem;
+    }
+
+    &__players {
+
+    }
+
+    &__arrow {
+      color white;
+      font-size 2rem;
+      cursor pointer;
+      &:hover {
+        box-shadow 0 8px 16px 0 rgba(0,0,0,0.2);
+      }
+    }
+
+    &__arrow-left {
+      @extend .Players-online-section__carousel__arrow;
+      margin-right 2rem;
+    }
+
+    &__arrow-right {
+      @extend .Players-online-section__carousel__arrow;
+      margin-left 2rem;
+    }
+  }
+
+  &__text {
+    margin-left 5rem;
+    color white;
+    text-align left;
+    max-width 30rem;
+
+    &__description-header {
+      font-size 2.5rem;
+      font-weight 600;
+    }
+
+    &__description {
+      font-size 1.25rem;
+      margin-top 1.5rem;
+      font-weight normal;
+    }
+  }
+
+}

@@ -3,8 +3,8 @@ import Template from "../react/common/ReactUtil";
 import React from "react";
 import Header from "../component/common/Header";
 import GradientSection from "../component/main/GradientSection";
-import InfoSection from "../component/main/InfoSection";
 import Footer from "../component/common/Footer";
+import InfoSectionParts from "../component/main/InfoSectionParts";
 
 
 @Template(function (this: MainView) {
@@ -12,7 +12,7 @@ import Footer from "../component/common/Footer";
         <div className="Main-view" id={this.getBlockName()}>
             <Header/>
             <GradientSection/>
-            <InfoSection/>
+            <InfoSectionParts/>
             <Footer/>
         </div>
     )

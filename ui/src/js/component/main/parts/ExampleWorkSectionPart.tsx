@@ -7,7 +7,8 @@ import AppProps from "../../common/AppProps";
 
 @Template(function (this: ExampleWorkSectionPart) {
     return (
-        <div className="Info-section__work-section Example-work-section" id={this.getBlockName()}>
+        <div className="Info-section__work-section Example-work-section" id={this.getBlockName()}
+             data-aos="zoom-out-down" data-aos-duration="2000">
             <div className="Example-work-section__content">
                 <div className="Example-work-section__img"/>
                 <div className="Example-work-section__text">

@@ -1,13 +1,22 @@
 .Players-online-section {
+  margin-top 5rem;
+  @keyframes players-refresh {
+    from {color: white;}
+    50% {color: $pink;}
+    to {color: white;}
+  }
 
   &__content {
-    padding 5rem;
+    padding-top none;
     display flex;
     flex-direction row;
     justify-content center;
   }
 
   &__carousel {
+    display flex;
+    flex-direction row;
+    align-items center;
 
     &__item {
       content url("/assets/test-png.png");
@@ -16,16 +25,27 @@
       min-height 5rem;
     }
 
-    &__players {
 
+    &__players {
+      color white;
+      text-align center;
+      margin-top 0.5rem;
+
+      &-refreshing {
+        animation players-refresh 2s ease;
+        animation-iteration-count 1;
+      }
     }
 
     &__arrow {
       color white;
       font-size 2rem;
       cursor pointer;
+      margin-bottom 1.5rem;
       &:hover {
         box-shadow 0 8px 16px 0 rgba(0,0,0,0.2);
+        color $pink;
+        transition all 0.5s ease 0s;
       }
     }
 
@@ -45,6 +65,7 @@
     color white;
     text-align left;
     max-width 30rem;
+
 
     &__description-header {
       font-size 2.5rem;

@@ -10,15 +10,9 @@ import Game from "../../../enums/Game";
 
 @Template(function (this: PlayersOnlineSectionPart) {
     return (
-        <div className="Info-section__players-online-section Players-online-section">
+        <div className="Info-section__players-online-section Players-online-section" id={this.getBlockName()}
+             data-aos="zoom-out-down" data-aos-duration="2000">
             <div className="Players-online-section__content">
-                <div className="Players-online-section__carousel">
-                    <i className="fas fa-angle-left Players-online-section__carousel__arrow-left"
-                        onClick={() => this.onClickPrev()}/>
-                    {this.getCurrentCarouselItem()}
-                    <i className="fas fa-angle-right Players-online-section__carousel__arrow-right"
-                        onClick={() => this.onClickNext()}/>
-                </div>
                 <div className="Players-online-section__text">
                     <div className="Players-online-section__text__description-header">
                         {this.props.t('work_example_header')}
@@ -26,6 +20,13 @@ import Game from "../../../enums/Game";
                             {this.props.t('work_example_description')}
                         </div>
                     </div>
+                </div>
+                <div className="Players-online-section__carousel">
+                    <i className="fas fa-angle-left Players-online-section__carousel__arrow-left"
+                        onClick={() => this.onClickPrev()}/>
+                    {this.getCurrentCarouselItem()}
+                    <i className="fas fa-angle-right Players-online-section__carousel__arrow-right"
+                        onClick={() => this.onClickNext()}/>
                 </div>
             </div>
         </div>
@@ -38,6 +39,7 @@ class PlayersOnlineSectionPart extends ReactComponent<Props, State> {
         this.onClickPrev.bind(this);
         this.getCurrentCarouselItem.bind(this);
         this.refreshCurrentGameStats.bind(this);
+        this.refreshStyle.bind(this);
     }
 
     componentDidMount() {
@@ -47,11 +49,12 @@ class PlayersOnlineSectionPart extends ReactComponent<Props, State> {
 
     private getCurrentCarouselItem(): JSX.Element {
         const currItem = this.state.currentCarouselItem;
+        let refreshingStyle = this.state.isRefreshingItem ? "Players-online-section__carousel__players-refreshing" : "";
         if (currItem)
             return (
                 <div>
                     <div className="Players-online-section__carousel__item"/>
-                    <div className="Players-online-section__carousel__players">
+                    <div className={`Players-online-section__carousel__players ${refreshingStyle}`}>
                         {`${this.props.t('curr_players_online')} | ${currItem.currPlayersOnline}`}
                     </div>
                 </div>
@@ -72,6 +75,12 @@ class PlayersOnlineSectionPart extends ReactComponent<Props, State> {
             this.setState({
                 currentCarouselItem: this.state.currentGamesStats[--currItemIndex]
             })
+        this.refreshStyle();
+    }
+
+    private refreshStyle(): void {
+        this.setState({isRefreshingItem: false});
+        this.setState({isRefreshingItem: true});
     }
 
     private onClickNext(): void {
@@ -86,6 +95,7 @@ class PlayersOnlineSectionPart extends ReactComponent<Props, State> {
             this.setState({
                 currentCarouselItem: this.state.currentGamesStats[++currItemIndex]
             })
+        this.refreshStyle();
     }
 
     private refreshCurrentGameStats(): void {
@@ -94,7 +104,8 @@ class PlayersOnlineSectionPart extends ReactComponent<Props, State> {
             .then(resp => {
                 this.setState({
                     currentGamesStats: resp.data,
-                    currentCarouselItem: currItem ? currItem : resp.data[0]
+                    currentCarouselItem: currItem ? currItem : resp.data[0],
+                    isRefreshingItem: true
                 })
             })
     }
@@ -110,6 +121,7 @@ interface Props extends AppProps {
 
 interface State {
     currentCarouselItem: GameStats,
+    isRefreshingItem: boolean,
     currentGamesStats: GameStats[]
 }
 

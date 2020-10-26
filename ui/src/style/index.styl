@@ -12,6 +12,11 @@ $pink = #b692c2;
   user-select: none;
 }
 
+@keyframes from-transparent {
+  from { opacity: 0;}
+  to { opacity: 1;}
+}
+
 @import "view/Main-view.styl";
 @import "component/common/Join-btn.styl";
 @import "component/common/Dropdown.styl";
@@ -27,4 +32,6 @@ $pink = #b692c2;
 body {
   background-color black;
   color white;
+  overflow-x hidden;
 }
+

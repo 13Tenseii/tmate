@@ -8,12 +8,13 @@
     color: white;
     padding: 0.3rem;
     font-size: 16px;
-    border: 3px solid $pink;
     cursor: pointer;
     border-radius 0.5rem;
 
     &:hover {
       background-color $darkestColor;
+      color $pink !important;
+      transition: all 0.7s ease 0s;
     }
 
     &-active {
@@ -36,8 +37,6 @@
     width 100%;
     border-bottom-left-radius 0.5rem;
     border-bottom-right-radius 0.5rem;
-    border 3px solid $pink;
-    border-top none;
 
     &-active {
       display flex;
@@ -54,6 +53,7 @@
 
       &:hover {
         background-color $darkestColor;
+        color $pink !important;
       }
     }
   }
